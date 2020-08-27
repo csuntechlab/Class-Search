@@ -1,0 +1,8 @@
+    .div_stub {
+      background-color: lightgrey;
+      height: 80px;
+      min-width: 80px;
+    }
+    tr {
+      font-size: 0.8rem;
+    }

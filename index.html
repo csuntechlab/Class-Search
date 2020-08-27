@@ -17,17 +17,18 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
   </head>
 
   <!-- create a stub class just to see how things look -->
-  <style>
+<style>
     .div_stub {
       background-color: lightgrey;
       height: 80px;
       min-width: 80px;
     }
   </style>
-
   <body>
     <div class="div_stub">
-      Class Search: Expandable Filters
+      <div id="title">
+         {{ title }}
+      </div>
     </div>
     <div comment="space" class="mb-2 invisible">
       comment:  Just some spacing for now"
@@ -39,7 +40,7 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
           <!-- In a small media format, I'd like to transform this into a tab structure, similiar to a nav structure. -->
           
           <div comment="Filters">
-            <div class="card mt-2 mb-2" comment="Subject Card">
+            <div class="card mb-2" comment="Subject Card">
               <div class="card-header" id="subjectBox">
                 <div class="mb-0">
                   <button class="btn btn-block pl-0" data-toggle="collapse" data-target="#subjectContents" aria-expanded="true" aria-controls="subjectContents">
@@ -122,38 +123,39 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
           </div>  
         </div>
 
-        <div class="col-9" >
+        <div class="col-9" comment="Terms and Class Table">
           <div class="mb-2 div_stub" comment="Term Selection">
-            <div class="container mb-2">
+            <div id="terms" class="container mb-2">
               <div class="row"> 
                 <div class="col"></div>
                 <div class="col-3"><button type="button" class="btn btn-primary btn-block">{{ last_term }}</button></div>
-                <div class="col-3"><button type="button" class="btn btn-primary btn-block active" aria-pressed="true" >{{ this_term }}</button></div>
+                <div class="col-3"><button type="button" class="btn btn-primary btn-block active" aria-pressed="true" >{{ current_term }}</button></div>
                 <div class="col-3"><button type="button" class="btn btn-primary btn-block">{{ next_term }}</button> </div>
-                <div class="col"></div>
+                <div class="col">{{this_term}}</div>
               </div>
             </div>
           </div>
-          <div class="mb-2" comment="Classes Table">
+          <div id="sections_available" class="mb-2" style="font-size=0.8rm!important" comment="Classes Table">   <!-- ToAddress: font-size -->
             <table class="table table-sm table-hover" comment="table-responsive">
               <thead class="thead-dark">
-                <tr><th>header</th></tr>
+                <tr> <th>Class#</th>        <th>Class</th>
+                     <th>Title</th>
+                     <th>Location</th>      <th>Days</th>   <th>Times</th>  
+                     <th>Instructor</th>    <th>Seats</th>   <th>Save</th>
+                </tr>
               </thead>
               <tbody>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
-                <tr> <td>something</td></tr>
+                <tr v-for="section in sections">
+                    <td> {{ section.class_number}} </td>
+                    <td> {{ section.subject }}{{ section.catalog_number }}-{{ section.section_number }} </td>
+                    <td> {{ section.title }} </td>
+                    <td> {{ section.meetings[0].location }} </td>
+                    <td> {{ section.meetings[0].days }} </td>
+                    <td> {{ section.meetings[0].start_time }} - {{ section.meetings[0].end_time }}</td> <!-- need to do range here -->
+                    <td> {{ section.instructors[0].instructor }} </td>
+                    <td> {{ section.enrollment_cap }} - {{ section.enrollment_count }}</td>  <!-- need to do math here -->
+                    <td> <input type="checkbox"></td>  <!-- make this tide to this row -->
+                  </tr>
               </tbody>
             </table>
           
@@ -161,6 +163,7 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
 
       </div>
     </div>
+    <!-- Footer -->
 
 
     <!-- Optional JavaScript -->
@@ -168,7 +171,15 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <!-- Now add the development version of Vue -->
     <script src="js/vue.js"></script></script>
+
+    <!-- Now add the Vue scripts for this project -->
+    <script src="js/class-search.js"></script>
+
+    <!-- Now add the styles for this project -->  <!-- ToAddress: integrate with better knowledge of bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/class-search.css">
+
   </body>
 </html>
