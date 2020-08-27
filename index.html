@@ -13,11 +13,65 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Advancing Technology Lab: Initialized Project</title>
+    <title>Class Search</title>
+  
   </head>
+
+  <!-- create a stub class just to see how things look -->
+  <style>
+    .div_stub {
+      background-color: lightgrey;
+      height: 80px;
+      min-width: 80px;
+    }
+  </style>
+
   <body>
-    <h1>Intialized Project</h1>
-    <p> This is the start of a Bootstrap and Vue project.</p>
+    <div class="div_stub">
+        Class Search: Major Layout
+    </div>
+    <div comment="space" class="mb-2 invisible">
+      comment:  Just some spacing for now"
+    </div>
+
+    <div class="container">
+      <div class="row" >
+        <div class="col-2" comment="Filters"> 
+          <div class="mb-2 div_stub">
+            Subject
+          </div>
+          <div class="mb-2 div_stub">
+            Level
+          </div>
+          <div class="mb-2 div_stub">
+            Location
+          </div>
+          <div class="mb-2 div_stub">
+            Day/time
+            <!-- a list of zero or more day-time sliders can be include here -->
+          </div>
+          <div class="mb-2 div_stub">
+            Instructor          
+          </div>
+          <!-- in the future, with appropriate data
+          <div id="additional-catagories-filter">
+          -->
+        </div>
+
+        <div class="col-10" comment="List of Terms">
+         <div class="mb-2 div_stub" comment="Term Selection">
+            Terms
+          </div>
+          <div class="mb-2 div_stub" comment="Classes Table">
+            Table
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=div_stub>
+          Footer
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
