@@ -13,11 +13,156 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Advancing Technology Lab: Initialized Project</title>
+    <title>Class Search</title>
   </head>
+
+
+    <!-- create a stub class just to see how things look -->
+  <style>
+    .div_stub {
+      background-color: lightgrey;
+      height: 80px;
+      min-width: 80px;
+    }
+  </style>
+
   <body>
-    <h1>Intialized Project</h1>
-    <p> This is the start of a Bootstrap and Vue project.</p>
+    <div class="div_stub">
+      Class Search: Expandable Filters
+    </div>
+    <div comment="space" class="mb-2 invisible">
+      comment:  Just some spacing for now"
+    </div>
+
+    <div class="container">
+      <div class="row" >
+        <div class="col-3" comment="Filters">
+          <!-- In a small media format, I'd like to transform this into a tab structure, similiar to a nav structure. -->
+          
+          <div comment="Filters">
+            <div class="card mt-2 mb-2" comment="Subject Card">
+              <div class="card-header" id="subjectBox">
+                <div class="mb-0">
+                  <button class="btn btn-block pl-0" data-toggle="collapse" data-target="#subjectContents" aria-expanded="true" aria-controls="subjectContents">
+                    Subject
+                  </button>
+                </div>
+              </div>
+              <div id="subjectContents" class="collapse show" aria-labelledby="subjectBox" >
+                <div class="card-body">
+                  Subject Box
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2" comment="Level Card">
+              <div class="card-header" id="levelBox">
+                <div class="mb-0">
+                  <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#levelContents" aria-expanded="false" aria-controls="levelContents">
+                    Academic Level
+                  </button>
+                </div>
+              </div>
+              <div id="levelContents" class="collapse" aria-labelledby="levelBox">
+                <div class="card-body">
+                  <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#levelContents" aria-expanded="false" aria-controls="levelContents">
+                  Level Box
+                </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2" comment="Location Card">
+              <div class="card-header" id="locationBox">
+                <div class="mb-0">
+                  <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#locationContents" aria-expanded="false" aria-controls="locationContents">
+                    Location
+                  </button>
+                </div>
+              </div>
+              <div id="locationContents" class="collapse" aria-labelledby="locationBox">
+                <div class="card-body">
+                  Location Box
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2" comment="Day/Time Card">
+              <div class="card-header" id="dayTimeBox">
+                <div class="mb-0">
+                  <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#dayTimeContents" aria-expanded="false" aria-controls="dayTimeContents">
+                     Day/Time
+                  </button>
+                </div>
+              </div>
+              <div id="dayTimeContents" class="collapse" aria-labelledby="dayTimeBox">
+                <div class="card-body">
+                  Time-day Box
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2" comment="Instructor Card">
+              <div class="card-header" id="instructorBox">
+                <div class="mb-0">
+                  <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#instructorContents" aria-expanded="false" aria-controls="instructorContents">
+                    Instructor
+                  </button>
+                </div>
+              </div>
+              <div id="instructorContents" class="collapse" aria-labelledby="instructorBox">
+                <div class="card-body">
+                  Instructor Box
+                </div>
+              </div>
+            </div>
+
+            <!-- in the future, with appropriate data
+            <div id="additional-catagories-filter">
+            -->
+          </div>  
+        </div>
+
+        <div class="col-9" >
+          <div class="mb-2 div_stub" comment="Term Selection">
+            <div class="container mb-2">
+              <div class="row"> 
+                <div class="col"></div>
+                <div class="col-3"><button type="button" class="btn btn-primary btn-block">{{ last_term }}</button></div>
+                <div class="col-3"><button type="button" class="btn btn-primary btn-block active" aria-pressed="true" >{{ this_term }}</button></div>
+                <div class="col-3"><button type="button" class="btn btn-primary btn-block">{{ next_term }}</button> </div>
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-2" comment="Classes Table">
+            <table class="table table-sm table-hover" comment="table-responsive">
+              <thead class="thead-dark">
+                <tr><th>header</th></tr>
+              </thead>
+              <tbody>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+                <tr> <td>something</td></tr>
+              </tbody>
+            </table>
+          
+        </div>
+
+      </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
