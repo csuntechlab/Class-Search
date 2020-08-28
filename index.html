@@ -39,7 +39,7 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
         <div class="col-3" comment="Filters">
           <!-- In a small media format, I'd like to transform this into a tab structure, similiar to a nav structure. -->
           
-          <div comment="Filters">
+          <div id="filters" comment="Filters">
             <div class="card mb-2" comment="Subject Card">
               <div class="card-header" id="subjectBox">
                 <div class="mb-0">
@@ -57,17 +57,43 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
 
             <div class="card mb-2" comment="Level Card">
               <div class="card-header" id="levelBox">
+                Academic Level
                 <div class="mb-0">
                   <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#levelContents" aria-expanded="false" aria-controls="levelContents">
-                    Academic Level
                   </button>
                 </div>
               </div>
               <div id="levelContents" class="collapse" aria-labelledby="levelBox">
                 <div class="card-body">
-                  <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#levelContents" aria-expanded="false" aria-controls="levelContents">
-                  Level Box
-                </button>
+                    <div class="row text-center text-small">
+                      <div class="col pl-0 pr-0">
+                        <div><label for="l_100">100</label></div>
+                        <div><input type="checkbox" id="l_100" value="100" v-model="includedLevels"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div> <label for="l_200">200</label></div>
+                        <div> <input type="checkbox" id="l_200" value="200" v-model="includedLevels"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="l_300">300</label></div>
+                        <div><input type="checkbox" id="l_300" value="300" v-model="includedLevels"></div>
+                      </div>
+                       <div class="col pl-0 pr-0">
+                        <div><label for="l_400">400</label></div>
+                        <div><input type="checkbox" id="l_400" value="400" v-model="includedLevels"></div>
+                      </div>
+                       <div class="invisible">
+                        x
+                      </div>
+                       <div class="col pl-0 pr-0">
+                        <div><label for="l_500">500</label></div>
+                        <div><input type="checkbox" id="l_500" value="500" v-model="includedLevels"></div>
+                      </div>
+                       <div class="col pl-0 pr-0">
+                        <div><label for="l_600">600</label></div>
+                        <div><input type="checkbox" id="l_600" value="600" v-model="includedLevels"></div>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -82,8 +108,21 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
               </div>
               <div id="locationContents" class="collapse" aria-labelledby="locationBox">
                 <div class="card-body">
-                  Location Box
-                </div>
+                    <div class="row text-center text-small">
+                      <div class="col pl-0 pr-0">
+                        <div><label for="l_onprem">OnCampus</label></div>
+                        <div><input type="checkbox" id="l_onprem" value="ONCAMPUS" v-model="includedLocations"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div> <label for="l_hybrid">Hybrid</label></div>
+                        <div> <input type="checkbox" id="l_hbrid" value="Hybrid" v-model="includedLocations"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="l_online">Online</label></div>
+                        <div><input type="checkbox" id="l_online" value="Onine" v-model="includedLocations"></div>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
 
@@ -91,13 +130,45 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
               <div class="card-header" id="dayTimeBox">
                 <div class="mb-0">
                   <button class="btn btn-block pl-0 collapsed" data-toggle="collapse" data-target="#dayTimeContents" aria-expanded="false" aria-controls="dayTimeContents">
-                     Day/Time
+                     Days/Time
                   </button>
                 </div>
               </div>
               <div id="dayTimeContents" class="collapse" aria-labelledby="dayTimeBox">
                 <div class="card-body">
-                  Time-day Box
+                    <div class="row text-center text-small">
+                      <div class="col pl-0 pr-0">
+                        <div><label for="d_mon">M</label></div>
+                        <div><input type="checkbox" id="d_mon" value="M" v-model="includedDaysTimes"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div> <label for="d_tues">T</label></div>
+                        <div> <input type="checkbox" id="d_tues" value="T" v-model="includedDaysTimes"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="d_weds">W</label></div>
+                        <div><input type="checkbox" id="d_weds" value="W" v-model="includedDaysTimes"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="l_thurs">R</label></div>
+                        <div><input type="checkbox" id="d_thurs" value="R" v-model="includedDaysTimes"></div>
+                      </div>         
+                      <div class="col pl-0 pr-0">
+                        <div><label for="d_fri">F</label></div>
+                        <div><input type="checkbox" id="d_fri" value="F" v-model="includedDaysTimes"></div>
+                      </div>
+                      <div class="invisible">
+                        x
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="d_sat">Sa</label></div>
+                        <div><input type="checkbox" id="d_sat" value="S" v-model="includedDaysTimes"></div>
+                      </div>
+                      <div class="col pl-0 pr-0">
+                        <div><label for="d_sun">Su</label></div>
+                        <div><input type="checkbox" id="d_sun" value="X" v-model="includedDaysTimes"></div>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>

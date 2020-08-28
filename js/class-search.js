@@ -23,7 +23,23 @@ var sample_data = {
 		]
 	}
 
+var something = new Vue ({
+    el: '#filters',
+    data: {
+      includedSubjects: [],
+      excludedSubjects: [],
+      includedLevels: [],
+      includedLocations: [],
+      includedDaysTimes: [],
+      includedInstructors: [],
+      excludedInstructors: []
+    }
 
+
+
+
+
+})
 
 var title = new Vue ({
 	el: '#title',
