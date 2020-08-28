@@ -25,13 +25,13 @@ v0.1 | Intial Project Setup | Creation of an intial set of files to have both Bo
 v0.2 | Grid Layout  | Use Bootstrap containers to create a responsive layout
 v0.3 | Expandabe Filter Boxes | Create expandable boxes for each of the filters that can be provided
 v0.4 | Curriculum API Consumption | Setup Vue to consume and display initial class data
+v0.5 | Checkbox Filters | Added the checkbox, with v-models, for the Location, Days, and Academic Level
 
 
 # Roadmap
 
 Version | Title |  Description
 ------- | ------|----
-v0.5    |
 v0.6    |
 v0.7    |
 v0.8    |
