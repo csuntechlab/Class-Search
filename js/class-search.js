@@ -31,6 +31,7 @@ var something = new Vue ({
       includedLevels: [],
       includedLocations: [],
       includedDaysTimes: [],
+      startTime: 700, endTime: 2200,
       includedInstructors: [],
       excludedInstructors: []
     }

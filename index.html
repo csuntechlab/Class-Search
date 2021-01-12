@@ -13,6 +13,8 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- <link rel="stylesheet" href="vendor/multirange/multirange.css"> -->
+
     <title>Class Search</title>
   </head>
 
@@ -169,6 +171,31 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
                         <div><input type="checkbox" id="d_sun" value="X" v-model="includedDaysTimes"></div>
                       </div>
                     </div>
+
+                    <div class="row mt-4">
+                      <div class="col-4">
+                      </div>
+                      <div class="col" style="font-size:.75rem">
+                        <span>7:00am</span> <span style="text-align=left">10:00pm</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="t_start">Start:</label>
+                      </div>
+                      <div class="col">
+                        <input id="t_start" type="range" multiple value="0,100" min="700" max="2200" step="50" value="700" v-model="startTime">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4">
+                        <label for="t_end">End:</label>
+                      </div>
+                      <div class="col">
+                        <input id="t_end" type="range"  min="700" max="2200" step="50" value="2200" v-model="endTime">
+                      </div>
+                    </div>
+                    {{ startTime }}, {{ endTime}}
                 </div>
               </div>
             </div>
@@ -225,7 +252,7 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
                     <td> {{ section.meetings[0].start_time }} - {{ section.meetings[0].end_time }}</td> <!-- need to do range here -->
                     <td> {{ section.instructors[0].instructor }} </td>
                     <td> {{ section.enrollment_cap }} - {{ section.enrollment_count }}</td>  <!-- need to do math here -->
-                    <td> <input type="checkbox"></td>  <!-- make this tide to this row -->
+                    <td> <input type="checkbox"></td>  <!-- make this tied to this row -->
                   </tr>
               </tbody>
             </table>
@@ -244,13 +271,22 @@ https://getbootstrap.com/docs/4.5/getting-started/introduction/
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- Now add the development version of Vue -->
-    <script src="js/vue.js"></script></script>
+    <script src="js/vue.js"></script>
 
     <!-- Now add the Vue scripts for this project -->
     <script src="js/class-search.js"></script>
 
     <!-- Now add the styles for this project -->  <!-- ToAddress: integrate with better knowledge of bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/class-search.css">
+
+    <!--    <script src="vendor/multirange/multirange.js"></script> -->
+
+    <script>
+      function range_calc() {
+        var x = document.getElementById("t_range").value;
+        document.getElementById("demo").innerHTML = 'Value= ' + x;
+      }
+    </script>
 
   </body>
 </html>
